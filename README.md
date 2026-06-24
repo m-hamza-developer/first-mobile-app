@@ -1,56 +1,112 @@
-# Welcome to your Expo app 👋
+# First App — React Native (Expo)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile application built with **Expo Router** and **React Native**, supporting Android, iOS, and Web.
 
-## Get started
+---
 
-1. Install dependencies
+## Tech Stack
 
-   ```bash
-   npm install
-   ```
+- [Expo](https://expo.dev) ~56
+- [React Native](https://reactnative.dev) 0.85.3
+- [Expo Router](https://expo.github.io/router) — file-based routing
+- [TypeScript](https://www.typescriptlang.org)
+- [@expo/vector-icons](https://docs.expo.dev/guides/icons/) — Ionicons, AntDesign, etc.
+- [expo-font](https://docs.expo.dev/versions/latest/sdk/font/) — custom fonts (Roboto)
+- [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/)
+- [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/)
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## Project Structure
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+first-app/
+├── assets/
+│   ├── font/               # Roboto font files
+│   └── images/             # App images & icons
+├── src/
+│   ├── app/
+│   │   ├── (auth)/         # Auth screens (signin, signup)
+│   │   ├── profile/        # Profile page
+│   │   ├── practics/       # Practice page
+│   │   ├── _layout.tsx     # Root layout
+│   │   ├── index.tsx       # Home screen
+│   │   └── explore.tsx     # Explore screen
+│   ├── components/         # Reusable components
+│   ├── constants/          # Theme & constants
+│   └── hooks/              # Custom hooks
+├── app.json
+├── package.json
+└── tsconfig.json
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-### Other setup steps
+## Getting Started
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+### 1. Install dependencies
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 2. Start the app
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo start
+```
 
-## Join the community
+Then scan the QR code with **Expo Go** app on your phone, or press:
+- `a` — open Android emulator
+- `i` — open iOS simulator
+- `w` — open in browser
 
-Join our community of developers creating universal apps.
+---
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm start` | Start Expo dev server |
+| `npm run android` | Start on Android |
+| `npm run ios` | Start on iOS |
+| `npm run web` | Start on Web |
+| `npm run lint` | Run ESLint |
+| `npm run reset-project` | Reset to blank app |
+
+---
+
+## Path Aliases
+
+Configured in `tsconfig.json`:
+
+| Alias | Points To |
+|-------|-----------|
+| `@/*` | `./src/*` |
+| `@/assets/*` | `./assets/*` |
+
+---
+
+## Fonts
+
+Custom Roboto fonts loaded via `expo-font`:
+
+| Key | File |
+|-----|------|
+| `RobotoRegular` | `Roboto-Regular.ttf` |
+| `RobotoMedium` | `Roboto-SemiBold.ttf` |
+| `RobotoBold` | `Roboto-Bold.ttf` |
+| `RobotoExtraBold` | `Roboto-ExtraBold.ttf` |
+
+Usage:
+```tsx
+<Text style={{ fontFamily: 'RobotoBold' }}>Hello</Text>
+```
+
+---
+
+## Notes
+
+- All screens are inside `src/app/` following Expo Router file-based routing
+- Auth screens are grouped under `(auth)/` folder
+- Images are stored in `assets/images/`, fonts in `assets/font/`
