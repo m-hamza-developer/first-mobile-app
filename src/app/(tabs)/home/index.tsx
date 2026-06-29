@@ -506,7 +506,7 @@ title="Profile"
 
 </View> */}
 
-<View style={styles.bottomNav}>
+{/* <View style={styles.bottomNav}>
   <BottomTab
     icon="home"
     title="Home"
@@ -540,7 +540,7 @@ title="Profile"
   router.push("/userprofile");
 }}
   />
-</View>
+</View> */}
 
 
 </View>
